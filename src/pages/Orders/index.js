@@ -21,7 +21,8 @@ function App() {
   const [orders, setOrders] = useState([])
   const navigate = useNavigate()
 
-  function deleteOrder(orderId) {
+  async function deleteOrder(orderId) {
+    await axios.delete(`http://localhost:3001/order/${orderId}`)
     const updatedOrders = orders.filter(order => order.id !== orderId)
     setOrders(updatedOrders)
   }
@@ -59,7 +60,7 @@ function App() {
           ))}
         </ul>
 
-        <Button onClick={goBackPage}>Voltar</Button>
+        <Button onClick={goBackPage} isBack={true}>Voltar</Button>
       </ContainerItems>
     </Container>
   );

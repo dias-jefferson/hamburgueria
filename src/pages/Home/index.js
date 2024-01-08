@@ -1,11 +1,11 @@
 import { React, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios'
+import axios from 'axios';
 
 import BurgerLogo from '../../assets/burger_logo.svg'
 
 import H1 from '../../components/Title'
-import ContainerItems  from "../../components/ContainerItems";
+import ContainerItems from "../../components/ContainerItems";
 import Button from '../../components/Button'
 
 import {
@@ -24,10 +24,11 @@ function App() {
   const inputClient = useRef()
 
   async function addNewOrder() {
-    
-    const {data: newOrder} = await axios.post("http://localhost:3001/order", {
-      order: inputOrder.current.value, 
-      clientName: inputClient.current.value})
+
+    const { data: newOrder } = await axios.post("http://localhost:3001/order", {
+      order: inputOrder.current.value,
+      clientName: inputClient.current.value,
+    })
 
     setOrders([...orders, newOrder])
 

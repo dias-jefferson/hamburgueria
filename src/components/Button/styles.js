@@ -4,7 +4,8 @@ export const Button = styled.button`
     width: 342px;
     height: 68px;
 
-    background: #D93856;
+    background: ${props => props.isBack ? 'rgba(255, 255, 255, 0.14)' : '#D93856'};
+    /* background: ; */
     border: none;
 
     color: #FFF;

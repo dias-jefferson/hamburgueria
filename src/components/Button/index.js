@@ -2,8 +2,8 @@ import React from "react";
 
 import { Button } from "./styles";
 
-function StyledButton({children}) {
-  return <Button>{children}</Button>
+function StyledButton({children, ...props}) {
+  return <Button {...props}>{children}</Button>
 
 }
 
